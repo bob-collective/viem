@@ -22,4 +22,4 @@ jobs:
       - name: Prune tags
         run: cd src && npm view --json | jq -r '.["viem"] | .["dist-tags"] | to_entries | .[] | select(.key != "latest") | select(.key != "canary") | .key' | xargs -I % npm dist-tag rm viem %
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
