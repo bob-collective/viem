@@ -44,7 +44,8 @@ export const serializers = {
 //////////////////////////////////////////////////////////////////////////////
 // Serializers
 
-export type SerializeTransactionDepositReturnType = TransactionSerializedDeposit
+// NOTE: not exported inlike ../op-chain/serializer.ts type
+type SerializeTransactionDepositReturnType = TransactionSerializedDeposit
 
 function serializeTransactionDeposit(
   transaction: TransactionSerializableDeposit,
