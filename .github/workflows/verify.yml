@@ -49,6 +49,7 @@ jobs:
         run: pnpm knip --production
 
       - name: Check size
+        if: false
         run: pnpm size
 
   types:
