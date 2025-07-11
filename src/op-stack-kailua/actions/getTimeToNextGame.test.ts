@@ -1,7 +1,7 @@
 import { beforeAll, expect, test, vi } from 'vitest'
 import { anvilMainnet } from '../../../test/src/anvil.js'
 import { reset } from '../../actions/index.js'
-import { optimism } from '../../op-stack/chains.js'
+import { optimism } from '../../op-stack-kailua/chains.js'
 import { getGames } from './getGames.js'
 import { getTimeToNextGame } from './getTimeToNextGame.js'
 

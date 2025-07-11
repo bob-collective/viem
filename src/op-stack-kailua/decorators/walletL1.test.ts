@@ -3,7 +3,7 @@ import { describe, expect, test } from 'vitest'
 import { accounts } from '~test/src/constants.js'
 import { anvilMainnet } from '../../../test/src/anvil.js'
 import { reset } from '../../actions/index.js'
-import { base } from '../../op-stack/chains.js'
+import { base } from '../../op-stack-kailua/chains.js'
 import { walletActionsL1 } from './walletL1.js'
 
 const client = anvilMainnet.getClient()

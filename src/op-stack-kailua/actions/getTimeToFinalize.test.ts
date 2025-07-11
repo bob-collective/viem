@@ -2,7 +2,7 @@ import { beforeAll, describe, expect, test, vi } from 'vitest'
 import { anvilMainnet, anvilOptimism } from '../../../test/src/anvil.js'
 import { getTransactionReceipt, reset } from '../../actions/index.js'
 
-import { getWithdrawals, optimism } from '../../op-stack/index.js'
+import { getWithdrawals, optimism } from '../../op-stack-kailua/index.js'
 import { getTimeToFinalize } from './getTimeToFinalize.js'
 
 const client = anvilMainnet.getClient()

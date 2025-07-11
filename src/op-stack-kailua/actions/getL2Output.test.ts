@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest'
 import { anvilMainnet } from '../../../test/src/anvil.js'
 import { reset } from '../../actions/index.js'
-import { optimism } from '../../op-stack/chains.js'
+import { optimism } from '../../op-stack-kailua/chains.js'
 import { getL2Output } from './getL2Output.js'
 
 const client = anvilMainnet.getClient()
