@@ -1,7 +1,7 @@
 import { beforeAll, expect, test } from 'vitest'
 import { anvilSepolia } from '../../../test/src/anvil.js'
 import { mainnetClient } from '../../../test/src/utils.js'
-import { base, optimismSepolia } from '../../op-stack/chains.js'
+import { base, optimismSepolia } from '../../op-stack-kailua/chains.js'
 import { getPortalVersion } from './getPortalVersion.js'
 
 const sepoliaClient = anvilSepolia.getClient()

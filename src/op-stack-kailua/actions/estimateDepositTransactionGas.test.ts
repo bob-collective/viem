@@ -3,7 +3,7 @@ import { anvilMainnet } from '../../../test/src/anvil.js'
 import { accounts } from '../../../test/src/constants.js'
 import { reset, setBalance } from '../../actions/index.js'
 import { parseEther } from '../../index.js'
-import { base } from '../../op-stack/chains.js'
+import { base } from '../../op-stack-kailua/chains.js'
 import { estimateDepositTransactionGas } from './estimateDepositTransactionGas.js'
 
 const client = anvilMainnet.getClient()
