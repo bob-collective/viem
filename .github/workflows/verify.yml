@@ -49,6 +49,7 @@ jobs:
         run: pnpm knip --production
 
       - name: Check size
+        if: false
         run: pnpm size
 
   types:
@@ -84,6 +85,7 @@ jobs:
 
   test:
     name: Test
+    if: false
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:

@@ -1,5 +1,11 @@
 # viem
 
+## 2.31.8
+
+### Patch Changes
+
+- [#1](https://github.com/bob-collective/viem/pull/1) [`6327e725d820dc0d20a7fb1e8f54140e24f52b84`](https://github.com/bob-collective/viem/commit/6327e725d820dc0d20a7fb1e8f54140e24f52b84) Thanks [@slavastartsev](https://github.com/slavastartsev)! - feat: add op-stack-kailua module
+
 ## 2.31.7
 
 ### Patch Changes
