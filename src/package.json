@@ -174,7 +174,7 @@
   },
   "license": "MIT",
   "homepage": "https://viem.sh",
-  "repository": "wevm/viem",
+  "repository": "bob-collective/viem",
   "authors": ["awkweb.eth", "jxom.eth"],
   "funding": [
     {
