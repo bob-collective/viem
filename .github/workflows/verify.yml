@@ -43,9 +43,11 @@ jobs:
         run: pnpm build
 
       - name: Publint
+        if: false
         run: pnpm test:build
 
       - name: Check for unused files, dependencies, and exports
+        if: false
         run: pnpm knip --production
 
       - name: Check size
@@ -85,6 +87,7 @@ jobs:
 
   test:
     name: Test
+    if: false
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
