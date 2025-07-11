@@ -1,6 +1,4 @@
 ---
-"example-op-stack-deposit": patch
-"site": patch
 "@gobob/viem": patch
 ---
 
