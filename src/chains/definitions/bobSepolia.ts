@@ -44,7 +44,6 @@ export const bobSepolia = defineChain({
     },
     disputeGameFactory: {
       [sourceId]: {
-        // 0x69c0d1659703DD666EC8fB17788aeD4ACc05ed3F
         address: '0x7a25d06Af869d0A94f6effAfFa0A830EEBF1EcfB',
         blockCreated: 8591637,
       },
