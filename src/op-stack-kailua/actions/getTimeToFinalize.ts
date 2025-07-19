@@ -157,14 +157,20 @@ export async function getTimeToFinalize<
       })
     : await Promise.resolve<[Address, bigint]>(['0x', 0n])
 
+  if (proveTimestamp === 0n)
+    throw new BaseError('Withdrawal has not been proven on L1.')
+
+  if (_disputeGameProxy === '0x')
+    throw new Error('Dispute game has not been created on L1.')
+
   const proofMaturityDelaySeconds = await readContract(client, {
     abi: kailuaGameAbi,
     address: _disputeGameProxy,
     functionName: 'MAX_CLOCK_DURATION',
-  })
+  }).catch(() => undefined)
 
-  if (proveTimestamp === 0n)
-    throw new BaseError('Withdrawal has not been proven on L1.')
+  if (!proofMaturityDelaySeconds)
+    throw new Error('Game duration is not specified.')
 
   const secondsSinceProven = Date.now() / 1000 - Number(proveTimestamp)
   const secondsToFinalize =
