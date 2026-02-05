@@ -252,7 +252,7 @@ export async function getWithdrawalStatus<
   const [
     disputeGameResult,
     checkWithdrawalResult,
-    provenWithdrawalsResult,
+    // provenWithdrawalsResult,
     finalizedResult,
   ] = await Promise.allSettled([
     getGame(client, {
@@ -266,12 +266,12 @@ export async function getWithdrawalStatus<
       functionName: 'checkWithdrawal',
       args: [withdrawal.withdrawalHash, proofSubmitter],
     }),
-    readContract(client, {
-      abi: portal2Abi,
-      address: portalAddress,
-      functionName: 'provenWithdrawals',
-      args: [withdrawal.withdrawalHash, proofSubmitter],
-    }),
+    // readContract(client, {
+    //   abi: portal2Abi,
+    //   address: portalAddress,
+    //   functionName: 'provenWithdrawals',
+    //   args: [withdrawal.withdrawalHash, proofSubmitter],
+    // }),
     readContract(client, {
       abi: portal2Abi,
       address: portalAddress,
@@ -327,13 +327,13 @@ export async function getWithdrawalStatus<
     }
     // NOTE https://github.com/ethereum-optimism/optimism/blob/5131b07a429fcdc035d69f08c9f26602a680c1fc/packages/contracts-bedrock/src/L1/OptimismPortal2.sol#L515
     // this contract function reverts in both 'ready-to-prove' and 'waiting-to-finalize' cases
-    if (error.name === 'ContractFunctionExecutionError') {
-      if (provenWithdrawalsResult.status === 'fulfilled') {
-        const [, timestamp] = provenWithdrawalsResult.value
-        if (timestamp) return 'waiting-to-finalize'
-      }
-      return 'ready-to-prove'
-    }
+    // if (error.name === 'ContractFunctionExecutionError') {
+    //   if (provenWithdrawalsResult.status === 'fulfilled') {
+    //     const [, timestamp] = provenWithdrawalsResult.value
+    //     if (timestamp) return 'waiting-to-finalize'
+    //   }
+    //   return 'ready-to-prove'
+    // }
     throw checkWithdrawalResult.reason
   }
   if (finalizedResult.status === 'rejected') throw finalizedResult.reason
