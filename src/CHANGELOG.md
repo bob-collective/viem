@@ -1,5 +1,11 @@
 # viem
 
+## 2.31.15
+
+### Patch Changes
+
+- [#23](https://github.com/bob-collective/viem/pull/23) [`2865e3614ebcc209423251a06e58b92e062197e0`](https://github.com/bob-collective/viem/commit/2865e3614ebcc209423251a06e58b92e062197e0) Thanks [@slavastartsev](https://github.com/slavastartsev)! - trigger release workflow
+
 ## 2.31.14
 
 ### Patch Changes
