@@ -174,20 +174,15 @@ export async function getTimeToFinalize<
   if (proveTimestamp === 0n)
     throw new BaseError('Withdrawal has not been proven on L1.')
 
+  const period =
+    Number(disputeGameFinalityDelaySeconds) + Number(maxClockDuration)
   const secondsSinceProven = Date.now() / 1000 - Number(proveTimestamp)
-  const secondsToFinalize =
-    Number(disputeGameFinalityDelaySeconds) +
-    Number(maxClockDuration) -
-    secondsSinceProven
+  const secondsToFinalize = period - secondsSinceProven
 
   const seconds = Math.floor(
     secondsToFinalize < 0 ? 0 : secondsToFinalize + buffer,
   )
   const timestamp = Date.now() + seconds * 1000
 
-  return {
-    period: Number(disputeGameFinalityDelaySeconds) + Number(maxClockDuration),
-    seconds,
-    timestamp,
-  }
+  return { period, seconds, timestamp }
 }
