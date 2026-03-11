@@ -181,9 +181,13 @@ export async function getTimeToFinalize<
     secondsSinceProven
 
   const seconds = Math.floor(
-    secondsToFinalize < 0n ? 0 : secondsToFinalize + buffer,
+    secondsToFinalize < 0 ? 0 : secondsToFinalize + buffer,
   )
   const timestamp = Date.now() + seconds * 1000
 
-  return { period: Number(disputeGameFinalityDelaySeconds), seconds, timestamp }
+  return {
+    period: Number(disputeGameFinalityDelaySeconds) + Number(maxClockDuration),
+    seconds,
+    timestamp,
+  }
 }
