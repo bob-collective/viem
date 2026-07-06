@@ -1,3 +1,11 @@
+/**
+ * @deprecated Starting with version 2.48.4, viem supports Kailua actions out of
+ * the box, thanks to https://github.com/wevm/viem/pull/4428. This module is no
+ * longer needed — use upstream viem instead.
+ *
+ * @module
+ */
+
 // biome-ignore lint/performance/noBarrelFile: entrypoint module
 export {
   buildDepositTransaction,
